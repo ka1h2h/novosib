@@ -26,7 +26,7 @@ function SidebarContainer({ closeSidebar }) {
                                 {closeSidebar ? <span className="tooltip-text" id="right">Главная</span> : ''}
                             </li>
                         </NavLink>
-                        {/* <SidebarListItems closeSidebar={closeSidebar} />   */}
+                        <SidebarListItems closeSidebar={closeSidebar} />  
                     </ul>
                 </nav>
             </section>

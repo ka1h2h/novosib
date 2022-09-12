@@ -283,6 +283,7 @@
             },
             "main": {
               "tabs": [
+                
                 {
                   "title": "Мастер приемщик",
                   "layout": "default",

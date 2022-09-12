@@ -1,29 +1,26 @@
-// import React, { useState, useEffect } from 'react'
-// import { NavLink, useLocation } from 'react-router-dom'
-// import 'material-design-icons/iconfont/material-icons.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { RecursiveComponent } from './SidebarRecursiveComponent'
-// import './css/main.css'
-// import { useSelector } from 'react-redux';
-// // import MainmenuRepo from '../../repositories/MainmenuRepo';
+import React, { useState, useEffect } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
+import 'material-design-icons/iconfont/material-icons.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { RecursiveComponent } from './SidebarRecursiveComponent'
+import './css/main.css'
+import { useSelector } from 'react-redux';
+import MainmenuRepo from '../../repositories/MainmenuRepo';
 
 
 
 
-// function SidebarListItems() {  
-// const menu = useSelector(state => state.schemeSlice.SchemesRepoState)
+function SidebarListItems() {  
+const menu = useSelector(state => state.schemeSlice.SchemesRepoState)
 
+  return (
+    <>
+      {MainmenuRepo.items().map(element => (
+        <RecursiveComponent key={`${element.item}`} {...element} />   
+        )
+      )}
+    </>
+  )
+}
 
-//   return (
-//     <>
-//       {Object.keys(menu).map(element => {
-//         return (
-//         <RecursiveComponent key={`${element.item}`} {...element} />   
-//         )
-//       }
-//       )}
-//     </>
-//   )
-// }
-
-// export default SidebarListItems
+export default SidebarListItems

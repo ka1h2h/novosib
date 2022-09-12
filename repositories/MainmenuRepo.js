@@ -5,11 +5,12 @@ import SchemesRepo from './SchemesRepo'
 
 class MainmenuRepo {            
     constructor() {
-        this.data = store.getState().SchemesRepoState
+        this.data = store.getState().schemeSlice.SchemesRepoState
     }
-
+    
+    
     items() {       
-        const schemes = store.getState().SchemesRepoState                
+        const schemes = store.getState().schemeSlice.SchemesRepoState   
         if (this.data.length == 0) {   
             this.data = StorageProvider.get("mainmenu")  
         }
@@ -30,8 +31,7 @@ class MainmenuRepo {
         if (Array.isArray(data) && data.length > 0) {
             this.data = data
         }
-
-
     }
 }
+
 export default new MainmenuRepo() 

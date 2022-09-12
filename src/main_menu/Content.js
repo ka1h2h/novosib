@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import WidgetsPage from '../widgets/widgets/WidgetsPage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Alert from '../components/alerts/Alerts';
+import WidgetsPage from './../components/page_widgets/WidgetsPage'
 
 
 function Content({ setAuth }) {                     

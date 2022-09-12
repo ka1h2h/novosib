@@ -5,10 +5,13 @@ import Email from "../inputs/Email";
 import Password from "../inputs/Password";
 import brand from './assets/img_brand.png'
 import car from './assets/img_car.png'
+import MainmenuRepo from "../../../repositories/MainmenuRepo";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getLoginNameUser } from "../../redux/slices";
 import { updateSchemesRepo } from "../../redux/schemeSlice";
+
+
 
 
 
@@ -60,16 +63,16 @@ const Authorization = ({ setAuth }) => {
            
                     let frontConfig = null
                    
-                    // try {                                
-                    //     frontConfig = JSON.parse(res.data.role.front_config) 
-                    // } catch (e) {
-                    //     console.error(e)
-                    // }
-                    // if (frontConfig !== null && typeof frontConfig.mainmenu != undefined && Object.keys(frontConfig).length !== 0) {  
-                    //     MainmenuRepo.setItems(frontConfig.mainmenu)
-                    // } else {                                                                                                        
-                    //     MainmenuRepo.setItems([])
-                    // }
+                    try {                                
+                        frontConfig = JSON.parse(res.data.role.front_config) 
+                    } catch (e) {
+                        console.error(e)
+                    }
+                    if (frontConfig !== null && typeof frontConfig.mainmenu != undefined && Object.keys(frontConfig).length !== 0) {  
+                        MainmenuRepo.setItems(frontConfig.mainmenu)
+                    } else {    
+                        MainmenuRepo.setItems([])
+                    }
 
                  
                     
