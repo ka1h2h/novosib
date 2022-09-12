@@ -12,17 +12,17 @@ import MainmenuRepo from "../../../repositories/MainmenuRepo";
 
 
 
-const Authorization = ({ setAuth }) => {          // компонента авторизации на сервере 
-    const [email, setEmail] = useState('')        // стейт email
-    const [password, setPassword] = useState('') // стейт password
-    const dispatch = useDispatch()               // хук, который ожидает на вход некий экшн
-    const navigate = useNavigate()               // хук, который отвечает за редирект на нужную нам страницу
+const Authorization = ({ setAuth }) => {       
+    const [email, setEmail] = useState('')       
+    const [password, setPassword] = useState('') 
+    const dispatch = useDispatch()               
+    const navigate = useNavigate()               
 
-    const handleFormSubmit = e => {              // функция, которая отменяет дефолтное поведение браузера
+    const handleFormSubmit = e => {             
         e.preventDefault();
     };
 
-    async function login() {                       // функция авторизации на сервере 
+    async function login() {                       
         try {
             const res = await fetch(`${baseurl}/auth/login`, {
                 method: "POST",
@@ -80,17 +80,17 @@ const Authorization = ({ setAuth }) => {          // компонента авт
     return (
         <>
             <div className='authorization'>
-                <div><img className="authorization_brand-mobile" src={brand} /></div>
+                <div><img className="authorization_brand-mobile"/></div>
                 <form onSubmit={handleFormSubmit}>
                     <span>Вход</span>
                     <Email value={email} setValue={setEmail} type='text' name='email' />
                     <Password value={password} setValue={setPassword} type='password' name='password' />
                     <button type='submit' onClick={login}>Войти</button>
                 </form>
-                <div className="authorization_img">
-                    <div><img className="authorization_brand" src={brand} /></div>
-                    <div><img className="authorization_car" src={car} /></div>
-                </div>
+                {/* <div className="authorization_img">
+                    <div><img className="authorization_brand" /></div>
+                    <div><img className="authorization_car" /></div>
+                </div> */}
             </div>
 
         </>
