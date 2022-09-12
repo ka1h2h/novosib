@@ -1,0 +1,1 @@
+{"scheme":"statuses","title":"","fields":{"id":{"type":"int","signed":false,"default":"AI()","length":"10","readOnly":true,"required":true},"name":{"type":"varchar","signed":true,"default":"","length":"50","required":true},"color":{"type":"varchar","signed":true,"default":"''","length":"10"}}}

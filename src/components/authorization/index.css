@@ -1,0 +1,172 @@
+
+
+.authorization {
+    position: relative;
+    background-color: #F1F5F8;
+    height: 100vh;
+    font-family: 'Gilroy';
+    font-style: normal;
+
+  }
+
+  .authorization span {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+
+  .authorization form {
+    position: absolute;
+    left: 10%;
+    top: 32%;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    display: block;
+    padding: 65px 100px;
+    max-width: 456px;
+    max-height: 420px;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .inputs-block {
+        max-width: 450px;
+    width: 100%;
+  }
+
+  .authorization button {
+     height: 30px;
+     margin-top: 25px;
+     border-radius: 10px;
+     width: 100%;
+     border: 0;
+     font-size: 14px;
+     background-color: #0094F0;
+     color: #FFFFFF;
+  }
+
+  .authorization_img {
+    position: absolute;
+    right:10%;
+    bottom: 0%;
+    display: block;
+    z-index: 1;
+  }
+
+
+  .authorization_brand {
+
+    max-width: 350px;
+    width: 100%;
+    margin-left: 85px;
+  }
+
+  
+  .authorization_car {
+    margin-top: 50px;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .authorization_brand-mobile {
+      display: none;
+  } 
+
+  @media (max-width: 1100px) {
+
+    /* .authorization {
+      display: flex;
+      align-items: center;
+    } */
+    .authorization_car {
+      max-width: 300px;
+      width: 100%;
+      margin-left: 85px;
+    }
+
+    .authorization_brand {
+      max-width: 300px;
+      width: 100%;
+      margin-left: 85px;
+    }
+    .authorization_brand-mobile {
+      display: none;
+  } 
+    .authorization span {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .authorization form {
+      padding: 20px 45px;
+      max-width: 300px;
+      max-height: 300px;
+      height: 100%;
+      width: 100%;
+    }
+
+
+  }
+
+
+  @media (max-width: 600px) {
+
+  
+        
+    .authorization_img {
+      display: none;
+    }
+
+    .authorization_car {
+        display: none;
+    }
+
+    .authorization_car {
+      display: none;
+    }
+
+    .authorization_brand-mobile {
+      padding-top: 150px;
+      display: block;
+      margin: 0 auto;
+      max-width: 250px;
+      margin-bottom: 50px;
+    }
+
+    .authorization span {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .authorization form {
+      position: unset;
+      margin: 0 auto;
+      padding: 20px 25px;
+      max-width: 300px;
+      max-height: 300px;
+    }
+  
+   
+
+ 
+
+  }
+
+  
+  /* .authorization Link {
+    height: 30px;
+     padding: 7px;
+     margin-top: 15px;
+     border-radius: 10px;
+     border: 0;
+     text-decoration: none;
+  } */
+  
+  /* .authorization-link  {
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: 14px;
+    white-space: nowrap;
+  }  */

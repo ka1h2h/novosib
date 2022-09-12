@@ -1,0 +1,1 @@
+{"scheme":"sessions","title":"","fields":{"id":{"type":"int","signed":false,"default":"AI()","length":"10","readOnly":true,"required":true},"uid":{"type":"varchar","signed":true,"default":"'0'","length":"36"},"token":{"type":"varchar","signed":true,"default":"'0'","length":"128"},"user":{"type":"int","signed":false,"length":"10"}}}

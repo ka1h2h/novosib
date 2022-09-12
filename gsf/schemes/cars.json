@@ -1,0 +1,1 @@
+{"scheme":"cars","title":"","fields":{"id":{"type":"int","signed":false,"default":"AI()","length":"10","readOnly":true,"required":true},"name":{"type":"varchar","signed":true,"default":"NULL","length":"50"}}}

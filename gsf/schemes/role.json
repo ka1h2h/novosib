@@ -1,0 +1,1 @@
+{"scheme":"role","title":"","fields":{"role":{"type":"char","signed":true,"default":"","length":"20","required":true},"name":{"type":"varchar","signed":true,"default":"NULL","length":"50"},"permissions":{"type":"longtext","signed":true,"default":"","length":"4294967295","required":true},"front_config":{"type":"longtext","signed":true,"default":"'{}'","length":"4294967295"}}}

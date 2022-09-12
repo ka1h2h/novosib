@@ -1,0 +1,285 @@
+{
+  "scheme": "clients",
+  "title": "",
+  "fields": {
+    "id": {
+      "type": "int",
+      "signed": false,
+      "default": "AI()",
+      "length": "10",
+      "readOnly": true,
+      "required": true
+    },
+    "car_brand": {
+      "type": "reference",
+      "signed": false,
+      "default": "NULL",
+      "length": "10",
+      "refTable": "car_brand",
+      "refKey": "id"
+    },
+    "type": {
+      "type": "reference",
+      "signed": false,
+      "default": "NULL",
+      "length": "3",
+      "refTable": "_types",
+      "refKey": "id"
+    },
+    "name": {
+      "type": "varchar",
+      "signed": true,
+      "default": "",
+      "length": "50",
+      "required": true
+    },
+    "pid": { "type": "int", "signed": false, "length": "10" },
+    "car_model": {
+      "type": "varchar",
+      "signed": true,
+      "default": "",
+      "length": "50",
+      "required": true
+    },
+    "car_vin": {
+      "type": "varchar",
+      "signed": true,
+      "default": "",
+      "length": "50",
+      "required": true
+    },
+    "uid": {
+      "type": "char",
+      "signed": true,
+      "default": "uuid()",
+      "length": "36",
+      "readOnly": true
+    },
+    "phone": {
+      "type": "varchar",
+      "signed": true,
+      "default": "NULL",
+      "length": "25"
+    },
+    "email": {
+      "type": "varchar",
+      "signed": true,
+      "default": "NULL",
+      "length": "100"
+    },
+    "created": {
+      "type": "timestamp",
+      "signed": true,
+      "default": "current_timestamp()",
+      "readOnly": true
+    },
+    "updated": {
+      "type": "timestamp",
+      "signed": true,
+      "default": "current_timestamp() on update current_timestamp()",
+      "readOnly": true
+    },
+    "password": {
+      "type": "varchar",
+      "signed": true,
+      "default": "NULL",
+      "length": "100"
+    },
+    "status": { "type": "tinyint", "signed": false, "length": "3" },
+    "puid": {
+      "type": "char",
+      "signed": true,
+      "default": "NULL",
+      "length": "36"
+    },
+    "activation_code": {
+      "type": "int",
+      "signed": false,
+      "default": "NULL",
+      "length": "10"
+    }
+  },
+      "views": {
+        "table": {
+          "id": { "title": "id" },
+          "name": { "title": "Имя" },
+          "phone": { "title": "Телефон" },
+          "created": { "title": "Дата создания" },
+          "updated": { "title": "Последние изменения" }
+        },
+        "form": {
+          "layout": "default",
+          "zones": {
+            "main": {
+              "tabs": [
+                {
+                  "title": "Основное",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "name": {
+                        "title": ["Имя"],
+                        "widget": "string",
+                        "min": 1,
+                        "max": "50",
+                        "required": true
+                      },
+                      "phone": {
+                        "title": ["Телефон"],
+                        "widget": "string",
+                        "min": 0,
+                        "max": "25"
+                      },
+                      "status": { "title": ["Статус"], "widget": "dropdows" }
+                    },
+                    "right" : {
+                      "car_brand": {
+                        "title": ["Марка машины"],
+                        "widget": "dropdown",
+                        "ref": "car_brand"
+                      },
+                      "car_model": {
+                        "title": ["Модель машины"],
+                        "widget": "string",
+                        "min": 1,
+                        "max": "50",
+                        "required": true
+                      },
+                      "car_vin": {
+                        "title": ["VIN автомобиля"],
+                        "widget": "string",
+                        "min": 1,
+                        "max": "50",
+                        "required": true
+                      },
+                      "created": {
+                        "title": ["Дата создания"],
+                        "widget": "string",
+                        "readOnly": true
+                      },
+                      "updated": {
+                        "title": ["Последние изменения"],
+                        "widget": "string",
+                        "readOnly": true
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "form_add": {
+            "layout": "default",
+            "zones": {
+              "main": {
+                "tabs": [
+                  {
+                    "title": "Основное",
+                    "layout": "default",
+                    "slots": {
+                      "main": {
+                        "name": {
+                          "title": ["Имя"],
+                          "widget": "string",
+                          "min": 1,
+                          "max": "50",
+                          "required": true
+                        },
+                        "phone": {
+                          "title": ["Телефон"],
+                          "widget": "string",
+                          "min": 0,
+                          "max": "25"
+                        }
+                      },
+                      "right" : {
+                        "car_brand": {
+                          "title": ["Марка машины"],
+                          "widget": "dropdown",
+                          "ref": "car_brand"
+                        },
+                        "car_model": {
+                          "title": ["Модель машины"],
+                          "widget": "string",
+                          "min": 1,
+                          "max": "50",
+                          "required": true
+                        },
+                        "car_vin": {
+                          "title": ["VIN автомобиля"],
+                          "widget": "string",
+                          "min": 1,
+                          "max": "50",
+                          "required": true
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "form_edit": {
+            "layout": "default",
+            "zones": {
+              "main": {
+                "tabs": [
+                  {
+                    "title": "Основное",
+                    "layout": "default",
+                    "slots": {
+                      "main": {
+                        "name": {
+                          "title": ["Имя"],
+                          "widget": "string",
+                          "min": 1,
+                          "max": "50",
+                          "required": true
+                        },
+                        "phone": {
+                          "title": ["Телефон"],
+                          "widget": "string",
+                          "min": 0,
+                          "max": "25"
+                        }
+                      },
+                      "right" : {
+                        "car_brand": {
+                          "title": ["Марка машины"],
+                          "widget": "dropdown",
+                          "ref": "car_brand"
+                        },
+                        "car_model": {
+                          "title": ["Модель машины"],
+                          "widget": "string",
+                          "min": 1,
+                          "max": "50",
+                          "required": true
+                        },
+                        "car_vin": {
+                          "title": ["VIN автомобиля"],
+                          "widget": "string",
+                          "min": 1,
+                          "max": "50",
+                          "required": true
+                        },
+                        "created": {
+                          "title": ["Дата создания"],
+                          "widget": "string",
+                          "readOnly": true
+                        },
+                        "updated": {
+                          "title": ["Последние изменения"],
+                          "widget": "string",
+                          "readOnly": true
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+      }
+}

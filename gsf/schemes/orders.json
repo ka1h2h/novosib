@@ -1,0 +1,485 @@
+{
+  "scheme": "orders",
+  "title": "",
+  "fields": {
+    "id": {
+      "type": "bigint",
+      "signed": false,
+      "default": "AI()",
+      "length": "20",
+      "readOnly": true,
+      "required": true
+    },
+    "client": {
+      "type": "reference",
+      "signed": false,
+      "default": "",
+      "length": "10",
+      "refTable": "clients",
+      "refKey": "id",
+      "required": true
+    },
+    "status": {
+      "type": "reference",
+      "signed": false,
+      "default": "NULL",
+      "length": "10",
+      "refTable": "statuses",
+      "refKey": "id"
+    },
+    "car": {
+      "type": "reference",
+      "signed": false,
+      "default": "NULL",
+      "length": "10",
+      "refTable": "cars",
+      "refKey": "id"
+    },
+    "nomenclature": {
+      "type": "reference",
+      "signed": false,
+      "default": "NULL",
+      "length": "20",
+      "refTable": "nomenclature",
+      "refKey": "id"
+    },
+    "master": {
+      "type": "reference",
+      "signed": false,
+      "default": "",
+      "length": "10",
+      "refTable": "users",
+      "refKey": "id",
+      "required": true
+    },
+    "mechanic": {
+      "type": "reference",
+      "signed": false,
+      "default": "NULL",
+      "length": "10",
+      "refTable": "users",
+      "refKey": "id"
+    },
+    "realesed_to": {
+      "type": "reference",
+      "signed": false,
+      "default": "NULL",
+      "length": "10",
+      "refTable": "users",
+      "refKey": "id"
+    },
+    "transered_to": {
+      "type": "reference",
+      "signed": false,
+      "default": "NULL",
+      "length": "10",
+      "refTable": "users",
+      "refKey": "id"
+    },
+    "uid": {
+      "type": "char",
+      "signed": true,
+      "default": "uuid()",
+      "length": "50",
+      "readOnly": true
+    },
+    "created": {
+      "type": "timestamp",
+      "signed": true,
+      "default": "current_timestamp()",
+      "readOnly": true
+    },
+    "updated": {
+      "type": "timestamp",
+      "signed": true,
+      "default": "current_timestamp() on update current_timestamp()",
+      "readOnly": true
+    },
+    "name": {
+      "type": "varchar",
+      "signed": true,
+      "default": "NULL",
+      "length": "50"
+    },
+    "master_problem": {
+      "type": "text",
+      "signed": true,
+      "default": "''",
+      "length": "65535"
+    },
+    "master_photo": {
+      "type": "varchar",
+      "signed": true,
+      "default": "NULL",
+      "length": "100"
+    },
+    "mechanic_comment": {
+      "type": "text",
+      "signed": true,
+      "default": "NULL",
+      "length": "65535"
+    },
+    "mechanic_photo": {
+      "type": "varchar",
+      "signed": true,
+      "default": "NULL",
+      "length": "100"
+    }
+  },
+      "views": {
+        "table": {
+          "id": { "title": "id" },
+          "client": { "title": "Клиент" },
+          "status": { "title": "status" },
+          "car": { "title": "car" },
+          "nomenclature": { "title": "nomenclature" },
+          "master": { "title": "master" },
+          "mechanic": { "title": "mechanic" },
+          "realesed_to": { "title": "realesed_to" },
+          "transered_to": { "title": "transered_to" },
+          "uid": { "title": "uid" },
+          "created": { "title": "created" },
+          "updated": { "title": "updated" },
+          "name": { "title": "name" },
+          "pid": { "title": "pid" },
+          "puid": { "title": "puid" },
+          "type": { "title": "type" },
+          "master_problem": { "title": "master_problem" },
+          "master_photo": { "title": "master_photo" },
+          "mechanic_comment": { "title": "mechanic_comment" },
+          "mechanic_photo": { "title": "mechanic_photo" }
+        },
+        "form": {
+          "layout": "default",
+          "zones": {
+            "right": {
+              "status": {
+                "title": ["Статус"],
+                "widget": "dropdown",
+                "ref": "statuses"
+              }
+            },
+            "left": {
+              "tabs": [
+                {
+                  "title": "Приемка",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "client": {
+                        "title": ["Клиент"],
+                        "widget": "dropdown",
+                        "ref": "clients"
+                      },
+                      "car": {
+                        "title": ["Автомобиль"],
+                        "widget": "dropdown",
+                        "ref": "cars"
+                      },
+                
+                      "master_problem": {
+                        "title": ["Описание проблемы"],
+                        "widget": "text",
+                        "min": 0,
+                        "max": "65535"
+                      },
+                      "mechanic": {
+                        "title": ["mechanic"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      }
+                    }
+                  }
+                }, 
+                {
+                  "title": "Механик",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "nomenclature": {
+                        "title": ["nomenclature"],
+                        "widget": "dropdown",
+                        "ref": "nomenclature"
+                      },
+                      "master": {
+                        "title": ["master"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      },
+                      "realesed_to": {
+                        "title": ["realesed_to"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      },
+                      "transered_to": {
+                        "title": ["transered_to"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      },
+                      "uid": {
+                        "title": ["uid"],
+                        "widget": "string",
+                        "min": 0,
+                        "max": "50",
+                        "readOnly": true
+                      },
+                      "created": {
+                        "title": ["created"],
+                        "widget": "string",
+                        "readOnly": true
+                      },
+                      "updated": {
+                        "title": ["updated"],
+                        "widget": "string",
+                        "readOnly": true
+                      },
+                      "master_photo": {
+                        "title": ["master_photo"],
+                        "widget": "string",
+                        "min": 0,
+                        "max": "100"
+                      },
+                      "mechanic_comment": {
+                        "title": ["mechanic_comment"],
+                        "widget": "text",
+                        "min": 0,
+                        "max": "65535"
+                      },
+                      "mechanic_photo": {
+                        "title": ["mechanic_photo"],
+                        "widget": "string",
+                        "min": 0,
+                        "max": "100"
+                      }
+                    }
+                  }
+                }
+               
+              
+
+              ]
+            }
+          }
+        },
+        "form_add": {
+          "layout": "default",
+          "zones": {
+            "bottom": {
+              "tabs": [
+                {
+                  "title": "Статус",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "status": {
+                        "title": ["Статус"],
+                        "widget": "dropdown",
+                        "ref": "statuses"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "main": {
+              "tabs": [
+                
+                {
+                  "title": "Мастер приемщик",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "master": {
+                        "title": ["Мастер"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      },
+                      "client": {
+                        "title": ["Клиент"],
+                        "widget": "dropdown",
+                        "ref": "clients"
+                      },
+                      "car": {
+                        "title": ["Автомобиль"],
+                        "widget": "dropdown",
+                        "ref": "cars"
+                      },
+                      "master_problem": {
+                        "title": ["Описание проблемы"],
+                        "widget": "text",
+                        "min": 0,
+                        "max": "65535"
+                      },
+                      "master_photo": {
+                        "title": ["Фото мастера"],
+                        "widget": "file",
+                        "min": 0,
+                        "max": "100"
+                      },
+                      "mechanic": {
+                        "title": ["Механик"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      },
+                      "nomenclature": {
+                        "title": ["Номенклатура"],
+                        "widget": "dropdown",
+                        "ref": "nomenclature"
+                      },
+                      "transered_to": {
+                        "title": ["Передано механику"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      }
+                    }
+                  }
+                }, 
+                {
+                  "title": "Механик",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "mechanic_comment": {
+                        "title": ["Комментарий механика"],
+                        "widget": "text",
+                        "min": 0,
+                        "max": "65535"
+                      },
+                      "mechanic_photo": {
+                        "title": ["Фото механика"],
+                        "widget": "file",
+                        "min": 0,
+                        "max": "100"
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "Склад",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "realesed_to": {
+                        "title": ["Выдано мастеру"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "form_edit": {
+          "layout": "default",
+          "zones": {
+            "bottom": {
+              "tabs": [
+                {
+                  "title": "Статус",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "status": {
+                        "title": ["Статус"],
+                        "widget": "dropdown",
+                        "ref": "statuses"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "main": {
+              "tabs": [
+                
+                {
+                  "title": "Мастер приемщик",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "master": {
+                        "title": ["Мастер"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      },
+                      "client": {
+                        "title": ["Клиент"],
+                        "widget": "dropdown",
+                        "ref": "clients"
+                      },
+                      "car": {
+                        "title": ["Автомобиль"],
+                        "widget": "dropdown",
+                        "ref": "cars"
+                      },
+                      "master_problem": {
+                        "title": ["Описание проблемы"],
+                        "widget": "text",
+                        "min": 0,
+                        "max": "65535"
+                      },
+                      "master_photo": {
+                        "title": ["Фото мастера"],
+                        "widget": "file",
+                        "min": 0,
+                        "max": "100"
+                      },
+                      "mechanic": {
+                        "title": ["Механик"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      },
+                      "nomenclature": {
+                        "title": ["Номенклатура"],
+                        "widget": "dropdown",
+                        "ref": "nomenclature"
+                      },
+                      "transered_to": {
+                        "title": ["Передано механику"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      }
+                    }
+                  }
+                }, 
+                {
+                  "title": "Механик",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "mechanic_comment": {
+                        "title": ["Комментарий механика"],
+                        "widget": "text",
+                        "min": 0,
+                        "max": "65535"
+                      },
+                      "mechanic_photo": {
+                        "title": ["Фото механика"],
+                        "widget": "file",
+                        "min": 0,
+                        "max": "100"
+                      }
+                    }
+                  }
+                },
+                {
+                  "title": "Склад",
+                  "layout": "default",
+                  "slots": {
+                    "main": {
+                      "realesed_to": {
+                        "title": ["Выдано мастеру"],
+                        "widget": "dropdown",
+                        "ref": "users"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+}
