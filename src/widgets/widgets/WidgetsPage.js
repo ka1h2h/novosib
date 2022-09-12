@@ -1,15 +1,19 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Routes, Route } from 'react-router-dom'
-import schemes from './../../../gsf/allSchemes.json'
 import { baseurl } from '../../../config'
 import DriversWidget from '../DriversWidget'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import DriversForm from './tables/driversTable/driversForm'
+import FormContainer from './tables/driversTable/FormContainer'
 import Authorization from '../../components/authorization/Authorization';
 import DashboardWidgetsCreator from '../../main_menu/DashboardWidgetsCreator'
+import SchemesRepo from '../../../repositories/SchemesRepo'
+import { useSelector } from 'react-redux';
+
 
 
 const WidgetsPage = ({ SetAlert, auth }) => {  
+const schemes = useSelector(state => state.schemeSlice.SchemesRepoState)
+useEffect(() => [schemes])
     const arr = Object.keys(schemes).map((key) => {
         return (
             <>
@@ -52,7 +56,7 @@ const WidgetsPage = ({ SetAlert, auth }) => {
                             element={
                                 <>
                                     <div className='m-5 fs-4'>Создать запись</div>
-                                    <DriversForm   
+                                    <FormContainer   
                                         auth={auth}
                                         apiUrl={`${baseurl}/${key}`}
                                         pageUrl={schemes[key].routes.add.path} 
@@ -70,7 +74,7 @@ const WidgetsPage = ({ SetAlert, auth }) => {
                             element={
                                 <>
                                     <div className='m-5 fs-4'>Создать файл</div>
-                                    <DriversForm 
+                                    <FormContainer 
                                         auth={auth}
                                         apiUrl={`${baseurl}/${key}`} 
                                         pageUrl={schemes[key].routes.add_file.path} 
@@ -87,7 +91,7 @@ const WidgetsPage = ({ SetAlert, auth }) => {
                             element={
                                 <>
                                     <div className='m-5 fs-4'>Создать папку</div>
-                                    <DriversForm 
+                                    <FormContainer 
                                         auth={auth}
                                         apiUrl={`${baseurl}/${key}`} 
                                         pageUrl={schemes[key].routes.add_folder.path} 
@@ -106,7 +110,7 @@ const WidgetsPage = ({ SetAlert, auth }) => {
                     element={
                         <>
                             <div className='m-5 fs-4'>Редактирование</div>
-                            <DriversForm 
+                            <FormContainer 
                                 auth={auth}
                                 apiUrl={`${baseurl}/${key}`} 
                                 pageUrl={schemes[key].routes.edit.path} 

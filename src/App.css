@@ -6,6 +6,7 @@
   }
 
     html,
+
 body {
     font-family: 'Roboto', sans-serif !important;
     width: 100%;
@@ -607,21 +608,9 @@ font-weight: 600;
     display: none;
 }
 
-
-.filters {
-  
-}
-
-
 .async-select {
     width: 220px;
 }
-
-.datepicker {
-
-}
-
-
 
 
 .table-bg {

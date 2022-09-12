@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import getCookie from '../../../../../../../../../components/Cookie/getCookie';
-import schemes from './../../../../../../../../../../gsf/allSchemes.json'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { baseurl } from '../../../../../../../../../../config';
+import SchemesRepo from '../../../../../../../../../../repositories/SchemesRepo';
 
 function Orders({  
     fetchDataById,
@@ -18,7 +18,7 @@ function Orders({
 
 
     let id = fetchDataById.id
-    const schemeHeaders = schemes[table_name].scheme.views.table
+    const schemeHeaders = SchemesRepo.getItems()[table_name].scheme.views.table
 
     function placeholder(obj, str) {     
         const arr = str.match(/{{\s*[\w\.]+\s*}}/g).map(function (x) { return x.match(/[\w\.]+/)[0]; })

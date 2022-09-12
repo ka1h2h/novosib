@@ -2,18 +2,19 @@ import React from "react"
 import Widget from "./widgets/Widget";
 
 function Inputs({ SchemeDataAll, scheme, updateValue, fetchDataById, field, method }) {
+    
     return (
         <>
             {
                 (() => {
                     const settings = SchemeDataAll[field].widget_settings
 
-                    if (String(typeof SchemeDataAll[field].table_name) === 'undefined') {
-                        SchemeDataAll[field].table_name = 'none'
-                    }
-                    if (String(typeof SchemeDataAll[field].filter) === 'undefined') {
-                        SchemeDataAll[field].filter = 'none'
-                    }
+                    // if (String(typeof SchemeDataAll[field].table_name) === 'undefined') {
+                    //     SchemeDataAll[field].table_name = 'none'
+                    // }
+                    // if (String(typeof SchemeDataAll[field].filter) === 'undefined') {
+                    //     SchemeDataAll[field].filter = 'none'
+                    // }
 
 
                     if (settings !== undefined && settings !== null && settings.length !== 0 && String(settings) !== 'undefined') {

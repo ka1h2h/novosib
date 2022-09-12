@@ -10,7 +10,7 @@ import getCookie from '../../../../components/Cookie/getCookie';
 
 
 
-const DriversForm = ({ apiUrl, method, SetAlert, scheme, editId, types }) => {  
+const FormContainer = ({ apiUrl, method, SetAlert, scheme, editId, types }) => {  
     const [fetchDataById, setFetchDataById] = useState(false)  
     const [send, setSend] = useState()
     const navigate = useNavigate() 
@@ -150,7 +150,7 @@ const DriversForm = ({ apiUrl, method, SetAlert, scheme, editId, types }) => {
 }
 
 
-export default DriversForm
+export default FormContainer
 
 
 

@@ -1,13 +1,15 @@
 import StorageProvider from '../providers/StorageProvider'
-import schemes from './../gsf/allSchemes.json'
+import { store } from '../src/redux'
+import SchemesRepo from './SchemesRepo'
 
 
 class MainmenuRepo {            
     constructor() {
-        this.data = []
+        this.data = store.getState().SchemesRepoState
     }
 
-    items() {                         
+    items() {       
+        const schemes = store.getState().SchemesRepoState                
         if (this.data.length == 0) {   
             this.data = StorageProvider.get("mainmenu")  
         }

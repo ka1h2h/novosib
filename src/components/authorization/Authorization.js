@@ -8,7 +8,8 @@ import car from './assets/img_car.png'
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getLoginNameUser } from "../../redux/slices";
-import MainmenuRepo from "../../../repositories/MainmenuRepo";
+import { updateSchemesRepo } from "../../redux/schemeSlice";
+
 
 
 
@@ -43,19 +44,41 @@ const Authorization = ({ setAuth }) => {
                         path: '/',                      
                         'max-age': 86400                 
                     }
-                    let frontConfig = null
-                    try {                                
-                        frontConfig = JSON.parse(res.data.role.front_config) 
+                    let schemes = res.data.role.schemes || null
+                    if (schemes != null) {
+                        try {
+                            schemes = JSON.parse(res.data.role.schemes)
+                            dispatch(updateSchemesRepo(schemes))
+                            
+                        } catch (e) {
+                            console.error(e)
+                            
 
-                    } catch (e) {
-                        console.error(e)
+                        }
                     }
-                    if (frontConfig !== null && typeof frontConfig.mainmenu != undefined && Object.keys(frontConfig).length !== 0) {  
-                                                                                                                                      
-                        MainmenuRepo.setItems(frontConfig.mainmenu)
-                    } else {                                                                                                        
-                        MainmenuRepo.setItems([])
-                    }
+
+           
+                    let frontConfig = null
+                   
+                    // try {                                
+                    //     frontConfig = JSON.parse(res.data.role.front_config) 
+                    // } catch (e) {
+                    //     console.error(e)
+                    // }
+                    // if (frontConfig !== null && typeof frontConfig.mainmenu != undefined && Object.keys(frontConfig).length !== 0) {  
+                    //     MainmenuRepo.setItems(frontConfig.mainmenu)
+                    // } else {                                                                                                        
+                    //     MainmenuRepo.setItems([])
+                    // }
+
+                 
+                    
+                    
+                    //if (res.data.role.schemes !== null )
+
+
+
+
               
                     let updatedCookie = encodeURIComponent(options.name) + "=" + encodeURIComponent(options.value);                    
                     for (let optionKey in options) {

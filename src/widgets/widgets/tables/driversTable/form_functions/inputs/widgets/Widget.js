@@ -8,7 +8,7 @@ import Description from "./widgets_list/description/Description";
 import M2mTable from "./widgets_list/compound/M2mTable";
 
 
-function Widget({                // это виджет контроллер, который проверяет, какой к нему виджет в данный момент прилетел и соответственно отрисовывает его
+function Widget({ 
     value,
     fetchDataById,
     updateValue,
@@ -21,15 +21,12 @@ function Widget({                // это виджет контроллер, к
     readOnly,
     required,
     placeholderField,
-    scheme,
     refs,
     SchemeDataAll,
     method,
     type,
     labelKey,
     refKey,
-
-  
 }) {
 
   

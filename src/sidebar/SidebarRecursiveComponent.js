@@ -3,9 +3,9 @@ import { NavLink, useLocation } from "react-router-dom"
 import './css/main.css'
 
 export const RecursiveComponent = ({ item, url, title, icon }) => {  
-
   const { pathname } = useLocation() 
   const path = url; 
+  
   return (
 
     <li className={`list-group-item hover-text d-flex align-items-center p-3  ${path === pathname ? 'active' : ''} `}>
