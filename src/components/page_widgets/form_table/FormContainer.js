@@ -11,8 +11,8 @@ import getCookie from './../../Cookie/getCookie';
 
 
 const FormContainer = ({ apiUrl, method, SetAlert, scheme, editId, types }) => {  
+    console.log(scheme)
     const [fetchDataById, setFetchDataById] = useState(false)  
-    const [send, setSend] = useState()
     const navigate = useNavigate() 
     let { SchemeFormTabs, SchemeData } = createZone(scheme.views, method);  
     const { id } = useParams()  

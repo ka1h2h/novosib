@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import schemes from './../../gsf/allSchemes1.json'
+import schemes from './../../gsf/allSchemes.json'
 
 
 const schemeSlice = createSlice({  
@@ -19,13 +19,13 @@ const schemeSlice = createSlice({
                 if (schemeViews != null) {
                     Object.keys(schemeViews).map((viewKey) => {
                         state.SchemesRepoState[schemeKey].scheme.views[viewKey] = schemeViews[viewKey]
-                     
                     })
                 }
-                
             })
             localStorage.setItem('schemes', JSON.stringify(state.SchemesRepoState))
-      
+        },
+        removeSchemesRepo: () => {
+            localStorage.removeItem('schemes')
         }
     },
     extraReducers: {
@@ -34,5 +34,5 @@ const schemeSlice = createSlice({
     }
 })
 
-export const { initSchemesRepo, updateSchemesRepo } = schemeSlice.actions
+export const { initSchemesRepo, updateSchemesRepo, removeSchemesRepo } = schemeSlice.actions
 export default schemeSlice.reducer

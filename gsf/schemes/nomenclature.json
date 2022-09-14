@@ -1,1 +1,217 @@
-{"scheme":"nomenclature","title":"","fields":{"id":{"type":"bigint","signed":false,"default":"AI()","length":"20","readOnly":true,"required":true},"type":{"type":"reference","signed":false,"default":"NULL","length":"3","refTable":"_types","refKey":"id"},"name":{"type":"varchar","signed":true,"default":"","length":"200","required":true},"uid":{"type":"char","signed":true,"default":"uuid()","length":"36","readOnly":true},"pid":{"type":"int","signed":true,"length":"10"},"puid":{"type":"char","signed":true,"default":"NULL","length":"36"},"description":{"type":"text","signed":true,"default":"''","length":"65535"},"price":{"type":"decimal","signed":true,"default":"0.000000","length":"20"},"barcode":{"type":"varchar","signed":true,"default":"NULL","length":"50"}}}
+{
+    "scheme": "nomenclature",
+    "title": "Номенклатура",
+    "icon": "sort",
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "signed": false,
+            "default": "AI()",
+            "length": "20",
+            "readOnly": true,
+            "required": true
+        },
+        "type": {
+            "type": "reference",
+            "signed": false,
+            "default": "NULL",
+            "length": "3",
+            "refTable": "_types",
+            "refKey": "id"
+        },
+        "name": {
+            "type": "varchar",
+            "signed": true,
+            "default": "",
+            "length": "200",
+            "required": true
+        },
+        "uid": {
+            "type": "char",
+            "signed": true,
+            "default": "uuid()",
+            "length": "36",
+            "readOnly": true
+        },
+        "pid": {
+            "type": "int",
+            "signed": true,
+            "length": "10"
+        },
+        "puid": {
+            "type": "char",
+            "signed": true,
+            "default": "NULL",
+            "length": "36"
+        },
+        "description": {
+            "type": "text",
+            "signed": true,
+            "default": "''",
+            "length": "65535"
+        },
+        "price": {
+            "type": "decimal",
+            "signed": true,
+            "default": "0.000000",
+            "length": "20"
+        },
+        "barcode": {
+            "type": "varchar",
+            "signed": true,
+            "default": "NULL",
+            "length": "50"
+        }
+    },
+    "views": {
+        "table": {
+            "id": {
+                "title": "#"
+            },
+            "name": {
+                "title": "Название"
+            },
+            "description": {
+                "title": "Описание"
+            },
+            "price": {
+                "title": "Цена"
+            },
+            "barcode": {
+                "title": "barcode"
+            }
+        },
+        "form": {
+            "layout": "default",
+            "zones": {
+                "main": {
+                    "tabs": [
+                        {
+                            "title": "Основное",
+                            "layout": "default",
+                            "slots": {
+                                "main": {
+                                    "id": {
+                                        "title": [
+                                            "#"
+                                        ],
+                                        "widget": "number"
+                                    },
+                                    "name": {
+                                        "title": [
+                                            "Название"
+                                        ],
+                                        "widget": "string",
+                                        "min": 1,
+                                        "max": "200",
+                                        "required": true
+                                    },
+                                    "description": {
+                                        "title": [
+                                            "Описание"
+                                        ],
+                                        "widget": "text",
+                                        "min": 0,
+                                        "max": "65535"
+                                    },
+                                    "barcode": {
+                                        "title": [
+                                            "barcode"
+                                        ],
+                                        "widget": "string",
+                                        "min": 0,
+                                        "max": "50"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "form_add": {
+            "layout": "default",
+            "zones": {
+                "main": {
+                    "tabs": [
+                        {
+                            "title": "Основное",
+                            "layout": "default",
+                            "slots": {
+                                "main": {
+                                    "name": {
+                                        "title": [
+                                            "Название"
+                                        ],
+                                        "widget": "string",
+                                        "min": 1,
+                                        "max": "200",
+                                        "required": true
+                                    },
+                                    "description": {
+                                        "title": [
+                                            "Описание"
+                                        ],
+                                        "widget": "text",
+                                        "min": 0,
+                                        "max": "65535"
+                                    },
+                                    "barcode": {
+                                        "title": [
+                                            "barcode"
+                                        ],
+                                        "widget": "string",
+                                        "min": 0,
+                                        "max": "50"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "form_edit": {
+            "layout": "default",
+            "zones": {
+                "main": {
+                    "tabs": [
+                        {
+                            "title": "Основное",
+                            "layout": "default",
+                            "slots": {
+                                "main": {
+                                    "name": {
+                                        "title": [
+                                            "Название"
+                                        ],
+                                        "widget": "string",
+                                        "min": 1,
+                                        "max": "200",
+                                        "required": true
+                                    },
+                                    "description": {
+                                        "title": [
+                                            "Описание"
+                                        ],
+                                        "widget": "text",
+                                        "min": 0,
+                                        "max": "65535"
+                                    },
+                                    "barcode": {
+                                        "title": [
+                                            "barcode"
+                                        ],
+                                        "widget": "string",
+                                        "min": 0,
+                                        "max": "50"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

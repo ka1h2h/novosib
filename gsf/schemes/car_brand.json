@@ -1,1 +1,144 @@
-{"scheme":"car_brand","title":"","fields":{"id":{"type":"int","signed":false,"default":"AI()","length":"10","readOnly":true,"required":true},"type":{"type":"reference","signed":false,"default":"NULL","length":"3","refTable":"_types","refKey":"id"},"name":{"type":"varchar","signed":true,"default":"","length":"100","required":true},"uid":{"type":"char","signed":true,"default":"uuid()","length":"36","readOnly":true},"pid":{"type":"int","signed":true,"length":"10"},"puid":{"type":"char","signed":true,"default":"NULL","length":"36"}}}
+{
+    "scheme": "car_brand",
+    "title": "Марки авто",
+    "icon": "toys",
+    "fields": {
+        "id": {
+            "type": "int",
+            "signed": false,
+            "default": "AI()",
+            "length": "10",
+            "readOnly": true,
+            "required": true
+        },
+        "type": {
+            "type": "reference",
+            "signed": false,
+            "default": "NULL",
+            "length": "3",
+            "refTable": "_types",
+            "refKey": "id"
+        },
+        "name": {
+            "type": "varchar",
+            "signed": true,
+            "default": "",
+            "length": "100",
+            "required": true
+        },
+        "uid": {
+            "type": "char",
+            "signed": true,
+            "default": "uuid()",
+            "length": "36",
+            "readOnly": true
+        },
+        "pid": {
+            "type": "int",
+            "signed": true,
+            "length": "10"
+        },
+        "puid": {
+            "type": "char",
+            "signed": true,
+            "default": "NULL",
+            "length": "36"
+        }
+    },
+    "views": {
+        "table": {
+            "id": {
+                "title": "#"
+            },
+            "name": {
+                "title": "Марка машины"
+            }
+        },
+        "form": {
+            "layout": "default",
+            "zones": {
+                "main": {
+                    "tabs": [
+                        {
+                            "title": "Основное",
+                            "layout": "default",
+                            "slots": {
+                                "main": {
+                                    "id": {
+                                        "title": ["#"],
+                                        "widget": "number"
+                                    },
+                                    "name": {
+                                        "title": ["Марка машины"],
+                                        "widget": "string",
+                                        "min": 1,
+                                        "max": "100",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "form_add": {
+            "layout": "default",
+            "zones": {
+                "main": {
+                    "tabs": [
+                        {
+                            "title": "Основное",
+                            "layout": "default",
+                            "slots": {
+                                "main": {
+                                    "name": {
+                                        "title": ["Марка машины"],
+                                        "widget": "string",
+                                        "min": 1,
+                                        "max": "100",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    
+                    
+                    ]
+                }
+            }
+
+        },
+        "form_edit": {
+            "layout": "default",
+            "zones": {
+                "main": {
+                    "tabs": [
+                        {
+                            "title": "Основное",
+                            "layout": "default",
+                            "slots": {
+                                "main": {
+                                    "name": {
+                                        "title": ["Марка машины"],
+                                        "widget": "string",
+                                        "min": 1,
+                                        "max": "100",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    
+                    
+                    ]
+                }
+            }
+
+        }
+    }
+    }
+
+    
+
+

@@ -4,14 +4,14 @@ import 'material-design-icons/iconfont/material-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { RecursiveComponent } from './SidebarRecursiveComponent'
 import './css/main.css'
-import { useSelector } from 'react-redux';
+
 import MainmenuRepo from '../../repositories/MainmenuRepo';
 
 
 
 
 function SidebarListItems() {  
-const menu = useSelector(state => state.schemeSlice.SchemesRepoState)
+
 
   return (
     <>

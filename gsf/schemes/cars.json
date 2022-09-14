@@ -1,1 +1,112 @@
-{"scheme":"cars","title":"","fields":{"id":{"type":"int","signed":false,"default":"AI()","length":"10","readOnly":true,"required":true},"name":{"type":"varchar","signed":true,"default":"NULL","length":"50"}}}
+{
+    "scheme": "cars",
+    "title": "Автомобили",
+    "icon": "directions_car",
+    "fields": {
+        "id": {
+            "type": "int",
+            "signed": false,
+            "default": "AI()",
+            "length": "10",
+            "readOnly": true,
+            "required": true
+        },
+        "name": {
+            "type": "varchar",
+            "signed": true,
+            "default": "NULL",
+            "length": "50"
+        }
+    },
+    "views": {
+        "table": {
+            "id": {
+                "title": "#"
+            },
+            "name": {
+                "title": "Гос. номер"
+            }
+        },
+        "form": {
+            "layout": "default",
+            "zones": {
+                "main": {
+                    "tabs": [
+                        {
+                            "title": "Основное",
+                            "layout": "default",
+                            "slots": {
+                                "main": {
+                                    "id": {
+                                        "title": [
+                                            "#"
+                                        ],
+                                        "widget": "number"
+                                    },
+                                    "name": {
+                                        "title": [
+                                            "Гос. номер"
+                                        ],
+                                        "widget": "string",
+                                        "min": 0,
+                                        "max": "50"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "form_add": {
+            "layout": "default",
+            "zones": {
+                "main": {
+                    "tabs": [
+                        {
+                            "title": "Основное",
+                            "layout": "default",
+                            "slots": {
+                                "main": {
+                                    "name": {
+                                        "title": [
+                                            "Гос. номер"
+                                        ],
+                                        "widget": "string",
+                                        "min": 0,
+                                        "max": "50"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "form_edit": {
+            "layout": "default",
+            "zones": {
+                "main": {
+                    "tabs": [
+                        {
+                            "title": "Основное",
+                            "layout": "default",
+                            "slots": {
+                                "main": {
+                                    "name": {
+                                        "title": [
+                                            "Гос. номер"
+                                        ],
+                                        "widget": "string",
+                                        "min": 0,
+                                        "max": "50"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

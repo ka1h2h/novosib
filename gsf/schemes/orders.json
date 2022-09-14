@@ -1,6 +1,7 @@
 {
   "scheme": "orders",
-  "title": "",
+  "title": "Заявки",
+  "icon": "settings",
   "fields": {
     "id": {
       "type": "bigint",
@@ -128,26 +129,14 @@
   },
       "views": {
         "table": {
-          "id": { "title": "id" },
+          "id": { "title": "#" },
           "client": { "title": "Клиент" },
-          "status": { "title": "status" },
-          "car": { "title": "car" },
-          "nomenclature": { "title": "nomenclature" },
-          "master": { "title": "master" },
-          "mechanic": { "title": "mechanic" },
-          "realesed_to": { "title": "realesed_to" },
-          "transered_to": { "title": "transered_to" },
-          "uid": { "title": "uid" },
-          "created": { "title": "created" },
-          "updated": { "title": "updated" },
-          "name": { "title": "name" },
-          "pid": { "title": "pid" },
-          "puid": { "title": "puid" },
-          "type": { "title": "type" },
-          "master_problem": { "title": "master_problem" },
-          "master_photo": { "title": "master_photo" },
-          "mechanic_comment": { "title": "mechanic_comment" },
-          "mechanic_photo": { "title": "mechanic_photo" }
+          "status": { "title": "Статус" },
+          "car": { "title": "Автомобиль" },
+          "master": { "title": "Мастер" },
+          "mechanic": { "title": "Механик" },
+          "created": { "title": "Дата создания" },
+          "updated": { "title": "Последние изменения" }
         },
         "form": {
           "layout": "default",

@@ -11,6 +11,7 @@ import FiltersCreator from './filter/FiltersCreator';
 import TableCalculator from './calculator/TableCalculator';
 
 
+
 const AdminTable = ({ apiUrl, scheme, pageUrl, types  }) => {   
   const { id } = useParams()  
   const location = useLocation()  
@@ -22,7 +23,7 @@ const AdminTable = ({ apiUrl, scheme, pageUrl, types  }) => {
   const [load, setLoad] = useState(false) 
   const [query, setQuery] = useState('')  
   const navigate = useNavigate()  
- 
+
   async function getData(filter) { 
     let url = apiUrl  
     if (!filter) {           
@@ -49,6 +50,8 @@ const AdminTable = ({ apiUrl, scheme, pageUrl, types  }) => {
     setFilterHidden(true)
   }
 
+
+
   useEffect(() => {   
     setFetchData(false)
     getData() 
@@ -69,9 +72,10 @@ const AdminTable = ({ apiUrl, scheme, pageUrl, types  }) => {
           if (tableRow.status !== 'undefined' && tableRow.status) {
             color = tableRow.status.color
           }
+ 
           return (
             <>
-              <tr key={rowIndex} onClick={() => { navigate(`${pageUrl}/${fetchData[rowIndex].uid}/edit` || `${pageUrl}/${fetchData[rowIndex].id}/edit`) }} className='border-1 border-top-0 border-start-0 border-end-0' style={{ backgroundColor: color }}>
+              <tr key={rowIndex} onClick={() => { navigate(`${pageUrl}/${fetchData[rowIndex].id}/edit`) || `${pageUrl}/${fetchData[rowIndex].uid}/edit)`}} className='border-1 border-top-0 border-start-0 border-end-0' style={{ backgroundColor: color }}>
                 {
                   typesSupport === undefined ? (
                     ''

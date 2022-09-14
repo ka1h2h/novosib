@@ -1,1 +1,42 @@
-{"scheme":"statuses","title":"","fields":{"id":{"type":"int","signed":false,"default":"AI()","length":"10","readOnly":true,"required":true},"name":{"type":"varchar","signed":true,"default":"","length":"50","required":true},"color":{"type":"varchar","signed":true,"default":"''","length":"10"}}}
+{
+    "scheme": "statuses",
+    "title": "Статусы",
+    "icon": "person_pin_circle",
+    "fields": {
+        "id": {
+            "type": "int",
+            "signed": false,
+            "default": "AI()",
+            "length": "10",
+            "readOnly": true,
+            "required": true
+        },
+        "name": {
+            "type": "varchar",
+            "signed": true,
+            "default": "",
+            "length": "50",
+            "required": true
+        },
+        "color": {
+            "type": "varchar",
+            "signed": true,
+            "default": "''",
+            "length": "10"
+        }
+    },
+    "views": {
+        "table": {
+            "id": {
+                "title": "#"
+            },
+            "name": {
+                "title": "Название"
+            },
+            "color": {
+                "title": "Цвет"
+            }
+        }
+    }
+
+}

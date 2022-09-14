@@ -51,18 +51,14 @@ const Authorization = ({ setAuth }) => {
                     if (schemes != null) {
                         try {
                             schemes = JSON.parse(res.data.role.schemes)
+                            console.log(res.data.role.schemes)
                             dispatch(updateSchemesRepo(schemes))
-                            
                         } catch (e) {
                             console.error(e)
-                            
-
                         }
                     }
 
-           
                     let frontConfig = null
-                   
                     try {                                
                         frontConfig = JSON.parse(res.data.role.front_config) 
                     } catch (e) {
@@ -74,15 +70,6 @@ const Authorization = ({ setAuth }) => {
                         MainmenuRepo.setItems([])
                     }
 
-                 
-                    
-                    
-                    //if (res.data.role.schemes !== null )
-
-
-
-
-              
                     let updatedCookie = encodeURIComponent(options.name) + "=" + encodeURIComponent(options.value);                    
                     for (let optionKey in options) {
                         updatedCookie += "; " + optionKey;

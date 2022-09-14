@@ -1,6 +1,7 @@
 {
   "scheme": "clients",
-  "title": "",
+  "title": "Клиенты",
+  "icon": "directions_run",
   "fields": {
     "id": {
       "type": "int",
@@ -130,14 +131,11 @@
                         "min": 0,
                         "max": "25"
                       },
-                      "status": { "title": ["Статус"], "widget": "dropdows" }
-                    },
-                    "right" : {
                       "car_brand": {
                         "title": ["Марка машины"],
                         "widget": "dropdown",
                         "ref": "car_brand"
-                      },
+                      },        
                       "car_model": {
                         "title": ["Модель машины"],
                         "widget": "string",
@@ -152,6 +150,9 @@
                         "max": "50",
                         "required": true
                       },
+                      "status": { "title": ["Статус"], "widget": "dropdows" }
+                    },
+                    "right" : {
                       "created": {
                         "title": ["Дата создания"],
                         "widget": "string",
@@ -191,9 +192,7 @@
                           "widget": "string",
                           "min": 0,
                           "max": "25"
-                        }
-                      },
-                      "right" : {
+                        },
                         "car_brand": {
                           "title": ["Марка машины"],
                           "widget": "dropdown",
@@ -242,9 +241,7 @@
                           "widget": "string",
                           "min": 0,
                           "max": "25"
-                        }
-                      },
-                      "right" : {
+                        },
                         "car_brand": {
                           "title": ["Марка машины"],
                           "widget": "dropdown",
@@ -263,16 +260,6 @@
                           "min": 1,
                           "max": "50",
                           "required": true
-                        },
-                        "created": {
-                          "title": ["Дата создания"],
-                          "widget": "string",
-                          "readOnly": true
-                        },
-                        "updated": {
-                          "title": ["Последние изменения"],
-                          "widget": "string",
-                          "readOnly": true
                         }
                       }
                     }
