@@ -398,6 +398,7 @@
                         "widget": "dropdown",
                         "ref": "clients"
                       },
+
                       "car": {
                         "title": ["Автомобиль"],
                         "widget": "dropdown",

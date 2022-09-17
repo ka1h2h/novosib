@@ -43,6 +43,7 @@ function Widget({
                 type={type}
                 required={required}
                 refKey={refKey}
+                readOnly={readOnly}
                
 
             />

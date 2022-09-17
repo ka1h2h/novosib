@@ -1,0 +1,56 @@
+{
+	"orders":{
+		"scheme":"orders",
+		"views":{
+			"form_edit": {
+			  "layout": "default",
+			  "zones": {
+				"bottom": {
+				  "tabs": [
+					{
+					  "title": "Статус",
+					  "layout": "default",
+					  "slots": {
+						"main": {
+						  "status": {
+							"title": ["Статус"],
+							"widget": "dropdown",
+							"ref": "statuses"
+						  }
+						}
+					  }
+					}
+				  ]
+				},
+				"main": {
+				  "tabs": [
+					{
+					  "title": "Склад",
+					  "layout": "default",
+					  "slots": {
+						"main": {
+						  "master": {
+							"title": ["Мастер приемщик"],
+							"widget": "dropdown",
+							"ref": "users"
+						  },
+						  "car": {
+							"title": ["Автомобиль"],
+							"widget": "dropdown",
+							"ref": "cars"
+						  },
+						  "nomenclature": {
+							"title": ["Номенклатура"],
+							"widget": "dropdown",
+							"ref": "nomenclature"
+						  }
+						}
+					  }
+					}
+				  ]
+				}
+			  }
+			}
+		}
+	}
+}

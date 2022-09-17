@@ -38,8 +38,8 @@
         },
         "password": {
             "type": "varchar",
-            "signed": true,
-            "default": "NULL",
+            "signed": true,      
+            "default": "NULL", 
             "length": "100"
         },
         "phone": {

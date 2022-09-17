@@ -15,10 +15,11 @@ function Dropdown({
     refs,
     required,
     labelKey,
+    readOnly,
     refKey
 }) {
 
- 
+
    
     const [valid, setValid] = useState({ validate: null, error: '' })
     const [loading, setLoading] = useState(false)
@@ -121,7 +122,7 @@ function Dropdown({
             updateValue(name, selectedOption2.value, null, setValid) 
         }
     }
-
+    console.log(readOnly)
 
     return (
         <>
@@ -131,6 +132,7 @@ function Dropdown({
                     className={`basic-single mb-2  ${validStatus()}`}
                     classNamePrefix="select "
                     defaultValue={selectedOption2}
+                    isDisabled={readOnly}
                     defaultOptions={options}
                     loadOptions={Options}
                     isSearchable={true}

@@ -7,13 +7,11 @@ class MainmenuRepo {
     constructor() {
         this.data = store.getState().schemeSlice.SchemesRepoState
     }
-    
-    
+        
     items() {       
-        const schemes = store.getState().schemeSlice.SchemesRepoState   
-        if (this.data.length == 0) {   
-            this.data = StorageProvider.get("mainmenu")  
-        }
+        this.data = StorageProvider.get("mainmenu") 
+        const schemes = store.getState().schemeSlice.SchemesRepoState  
+
         if (!Array.isArray(this.data) || this.data.length == 0) {
             this.data = Object.keys(schemes).map((key) => {
                 return {
